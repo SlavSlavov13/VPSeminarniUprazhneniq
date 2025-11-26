@@ -4,11 +4,11 @@ def set_gen(numbers):
 
 	for num in numbers:
 		if num not in counts:
-			counts[num] = 0
+			counts[num] = 1
 			result.add(num)
 		else:
 			counts[num] += 1
-			new_val = str(num) * (counts[num] + 1)
+			new_val = str(num) * counts[num]
 			result.add(new_val)
 
 	return result
