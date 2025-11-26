@@ -1,4 +1,5 @@
 def calculate_median(numbers):
+	numbers.sort()
 	n = len(numbers)
 	if n % 2 == 1:
 		median = numbers[n // 2]
