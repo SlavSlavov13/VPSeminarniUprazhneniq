@@ -142,7 +142,7 @@ def main():
 		'7': delete_all_records,
 		'8': sort_by_name,
 		'9': show_positions,
-		'0': calculate_avg_salary_under_30()
+		'0': calculate_avg_salary_under_30
 	}
 
 	while True:
