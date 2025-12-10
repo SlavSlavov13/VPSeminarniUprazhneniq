@@ -70,9 +70,12 @@ def main():
 			print("Employee added.")
 
 		elif choice == '3':
-			print("\n--- Basic Data ---")
-			for emp in employees:
-				emp.display_basic_info()
+			if not employees:
+				print("\nList is empty.")
+			else:
+				print("\n--- Basic Data ---")
+				for emp in employees:
+					emp.display_basic_info()
 
 		elif choice == '4':
 			if not employees:
@@ -89,6 +92,9 @@ def main():
 				print(f"\nYoungest Person: {youngest.name} ({youngest.age} years old)")
 
 		elif choice == '6':
+			if not employees:
+				print("\nList is empty.")
+				continue
 			name_to_delete = input("\nEnter the name of the person to delete: ")
 			found = False
 
@@ -103,10 +109,16 @@ def main():
 				print(f"Error: Could not find anyone named '{name_to_delete}'.")
 
 		elif choice == '7':
+			if not employees:
+				print("\nList is already empty.")
+				continue
 			employees.clear()
 			print("\nAll records have been deleted.")
 
 		elif choice == '8':
+			if not employees:
+				print("\nList is empty.")
+				continue
 			employees.sort(key=lambda x: x.name)
 			print("\nList sorted by name.")
 
@@ -119,6 +131,9 @@ def main():
 					emp.display_position()
 
 		elif choice == '0':
+			if not employees:
+				print("\nList is empty.")
+				continue
 			under_30 = [e for e in employees if e.age < 30]
 			total_age = sum(e.age for e in under_30)
 
