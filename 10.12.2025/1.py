@@ -110,20 +110,20 @@ def show_positions(employees):
 		for emp in employees:
 			emp.display_position()
 
-def calculate_avg_age_under_30(employees):
+def calculate_avg_salary_under_30(employees):
 	if not employees:
 		print("\nList is empty.")
 		return
 
 	under_30 = [e for e in employees if e.age < 30]
-	total_age = sum(e.age for e in under_30)
+	total_salaries = sum(e.age for e in under_30)
 
 	try:
 		if len(under_30) == 0:
 			raise ZeroDivisionError("No employees under 30 found.")
 
-		average = total_age / len(under_30)
-		print(f"\nAverage age of people under 30: {average:.2f}")
+		average = total_salaries / len(under_30)
+		print(f"\nAverage salary of people under 30: {average:.2f}")
 
 	except ZeroDivisionError as e:
 		print(f"\nException Caught: {e}")
@@ -142,7 +142,7 @@ def main():
 		'7': delete_all_records,
 		'8': sort_by_name,
 		'9': show_positions,
-		'0': calculate_avg_age_under_30
+		'0': calculate_avg_salary_under_30()
 	}
 
 	while True:
@@ -156,7 +156,7 @@ def main():
 		print("7. Delete all records")
 		print("8. Sort by Name")
 		print("9. Show positions only")
-		print("0. Calculate Avg Age (Under 30) - [Exception Test]")
+		print("0. Calculate Avg Salary (For Age Under 30) - [Exception Test]")
 		print('Type "exit" to stop the program')
 
 		choice = input("\nChoose an option: ")
